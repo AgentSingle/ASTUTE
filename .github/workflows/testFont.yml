@@ -1,4 +1,4 @@
-name: ZbspmsFontend Tests
+name: astute Tests
 
 on:
   pull_request:
