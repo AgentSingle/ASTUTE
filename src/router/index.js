@@ -27,7 +27,7 @@ const router = createRouter({
       },
       {
         path: '/:catchAll(.*)', // Fallback route to handle 404 errors
-        component: NotFound,
+        component: () => import("../views/NotFound/NoteFound.vue"),
       }
     ],
 });
