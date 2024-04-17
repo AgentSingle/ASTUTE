@@ -10,7 +10,7 @@
      Navigation Bar
     </nav>
     <section>
-        <RouterLink :to="{name: 'Dart'}">
+        <RouterLink to="/Dart/">
             <button>
                 Learn Dart
             </button>
