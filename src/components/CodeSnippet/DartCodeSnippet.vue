@@ -1,5 +1,5 @@
 <script setup>
-import { ref, onMounted, defineProps } from 'vue';
+import { ref, onMounted, defineProps, watch } from 'vue';
 import Prism from 'prismjs';
 import 'prismjs/components/prism-dart'; // Import Dart language module
 
@@ -19,7 +19,9 @@ onMounted(() => {
   code.value = props.code;
   highlightCode();
 });
-
+// watch(code, ()=>{
+//   highlightCode();
+// })
 </script>
 
 <template>
