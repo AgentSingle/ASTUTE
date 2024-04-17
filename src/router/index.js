@@ -25,6 +25,10 @@ const router = createRouter({
         name: "Flutter",       
         component: () => import("../views/Tutorials/FlutterTutorial/FlutterTutorial.vue"),       
       },
+      {
+        path: '/:catchAll(.*)', // Fallback route to handle 404 errors
+        component: NotFound,
+      }
     ],
 });
 
