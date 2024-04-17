@@ -1,0 +1,39 @@
+/* Only Flex */
+.Flx{
+    display: flex;
+}
+
+/* Flex item space evenly */
+.FlxSE{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+/* Flex item space between */
+.FlxSB{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/* Flex item middle */
+.FlxM{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Flex item center left */
+.FlxCL{
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+/* Flex item center right */
+.FlxCR{
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
