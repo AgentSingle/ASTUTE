@@ -7,7 +7,7 @@ import DartActionLinks from '../../../components/Actions/DartActions/DartActionL
         Dart Tutorial
     </header>
     <aside>
-    <DartActionLinks></DartActionLinks>
+        <DartActionLinks></DartActionLinks>
     </aside>
     <section>
         <RouterView />

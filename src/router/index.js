@@ -12,6 +12,9 @@ const router = createRouter({
         path: "/Dart",
         name: "Dart",       
         component: () => import("../views/Tutorials/DartTutorial/DartTutorial.vue"),
+        redirect: {
+          name: 'Dart.DartTutorial',
+        },
         children: [
           {
             path: "",
