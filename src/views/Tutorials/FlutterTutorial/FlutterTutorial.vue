@@ -4,7 +4,8 @@ import NestedCard from '../../../components/Cards/ListCard/NestedCard.vue';
 
 <template>
     <NestedCard buttonName="Flutter Tutorial">
-        <ul style="list-style-type: none;">
+        not initiated yet
+        <!-- <ul style="list-style-type: none;">
             <NestedCard buttonName="Besic Components">
                 <ul style="list-style-type: none;">
                     <li>2</li>
@@ -17,7 +18,7 @@ import NestedCard from '../../../components/Cards/ListCard/NestedCard.vue';
             <li>3</li>
             <li>4</li>
             <li>5</li>
-        </ul>
+        </ul> -->
     </NestedCard>
 </template>
 

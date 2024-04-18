@@ -15,11 +15,11 @@ const setTutorial = (tute, title) => {
         <NestedCard buttonName="Basics">
             <button @click="setTutorial('1d1', 'Dart Besic')">Dart Besic</button>
             <button @click="setTutorial('2d1', 'Variables')">Variables</button>
-            <button>Data Types</button>
-            <button>Comments</button>
-            <button>Operators</button>
-            <button>Input</button>
-            <button>String</button>
+            <button @click="setTutorial('3d1', 'Data Types')">Data Types</button>
+            <button @click="setTutorial('4d1', 'Comments')">Comments</button>
+            <button @click="setTutorial('5d1', 'Operators')">Operators</button>
+            <button @click="setTutorial('6d1', 'Input')">Input</button>
+            <button @click="setTutorial('7d1', 'String')">String</button>
         </NestedCard>
     </NestedCard>
 </template>
