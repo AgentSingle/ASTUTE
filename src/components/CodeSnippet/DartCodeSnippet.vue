@@ -12,7 +12,9 @@ const code = ref('');
 let codeRef = ref(null); // Define codeRef
 
 const highlightCode = () => {
-  Prism.highlightElement(codeRef.value);
+  setTimeout(() => {
+    Prism.highlightElement(codeRef.value);
+  }, 100);
 };
 
 onMounted(() => {
