@@ -1,33 +1,28 @@
 <script setup>
-import { ref, onMounted, defineProps } from 'vue';
+import { ref, onMounted, defineProps, watch } from 'vue';
 import Prism from 'prismjs';
 import 'prismjs/components/prism-dart'; // Import Dart language module
-
 const props = defineProps({
-  code: undefined,
+  codeTitle: String,
 });
-
-const code = ref('');
 
 let codeRef = ref(null); // Define codeRef
 
 const highlightCode = () => {
-  Prism.highlightElement(codeRef.value);
+    Prism.highlightElement(codeRef.value);
 };
 
 onMounted(() => {
-  code.value = props.code;
-  highlightCode();
+    highlightCode();
 });
 
 </script>
 
 <template>
-  <div class="CodeWrapper">
-    <pre>
-      <code :class="`language-dart`" ref="codeRef">{{ code }}</code>
-    </pre>
-  </div>
+    <div class="CodeWrapper">
+    <div class="SnippitTitle">{{ codeTitle }}</div>
+        <pre><code :class="`language-dart`" ref="codeRef"><slot></slot></code></pre>
+    </div>
 </template>
 
 <style>
@@ -40,14 +35,21 @@ onMounted(() => {
 @import 'prismjs/themes/prism-tomorrow.css';
 
 .CodeWrapper {
-  width: calc(100% - 2rem);
-  padding: 0.5rem 1rem;
+    width: calc(100% - 2rem);
+    padding: 0.5rem 1rem;
+}
+
+.SnippitTitle {
+    text-transform: capitalize;
+    font-weight: bold;
 }
 
 pre {
-  overflow-x: auto; /* Enable horizontal scrolling */
-  font-size: 1.2rem;
-  border-radius: 1rem;
-  padding: 0 2rem;
+    overflow-x: auto;
+    /* Enable horizontal scrolling */
+    font-size: 1.2rem;
+    border-radius: 1rem;
+    padding: 0 2rem;
+    min-height: calc(80vh - 7rem);
 }
 </style>

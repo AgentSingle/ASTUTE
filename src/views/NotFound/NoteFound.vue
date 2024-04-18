@@ -1,8 +1,10 @@
 <script setup>
 import { onMounted } from 'vue';
-// onMounted(()=>{
-//     router.go(-1);
-// })
+import { useRouter } from 'vue-router';
+const router = useRouter();
+onMounted(()=>{
+    router.go(-1);
+})
 </script>
 
 <template>
