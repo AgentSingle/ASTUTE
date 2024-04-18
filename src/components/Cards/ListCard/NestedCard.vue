@@ -38,6 +38,7 @@ const setVisibilityStatus = () => {
     background: var(--gradient-header);
     color: var(--light);
     transition: 0.5s ease-in;
+    text-align: left;
 }
 
 .NestedCardWrapper button:hover {

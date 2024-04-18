@@ -14,7 +14,9 @@ import { ref } from "vue";
     </header>
     <aside>
       <DartTutoiral></DartTutoiral>
+      <hr>
       <FlutterTutorial ></FlutterTutorial>
+      <hr>
     </aside>
     <section>
       <div v-if="tutorialEntryPointStore.tutorialLanguage=='dart'">
