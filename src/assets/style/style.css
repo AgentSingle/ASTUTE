@@ -12,6 +12,8 @@
   -moz-osx-font-smoothing: grayscale;
 
   --gradient-header: linear-gradient(90deg, rgba(65,209,255,1) 0%, rgba(189,52,254,1) 100%);
+  --gradient-header-reverse: linear-gradient(90deg, rgba(189,52,254,1) 0%, rgba(65,209,255,1) 100%);
+  --light: #ffffff;
 }
 
 * {
@@ -68,6 +70,8 @@ body {
 button {
   border: none;
   outline: none;
+  user-select: none;
+  cursor: pointer;
 }
 button:hover {
   outline: none;

@@ -1,38 +1,35 @@
 <script setup>
-import DartActionLinks from '../../../components/Actions/DartActions/DartActionLinks.vue';
+import { ref, onMounted } from 'vue';
+import NestedCard from '../../../components/Cards/ListCard/NestedCard.vue';
+import { useTutorialEntryPoint } from "../../../stores/tutorialsEntryPointStore.js";
+const tutorialEntryPointStore = useTutorialEntryPoint();
+
+import { Basics } from '../DartTutorial/1_Besics/0_Besics.js';
+const setTutorial = (tute, title) => {
+    tutorialEntryPointStore.setTutorialData('dart', Basics[tute], title);
+}
 </script>
 
 <template>
-    <header class="FlxM XLT Tcapital Tbold">
-        Dart Tutorial
-    </header>
-    <aside>
-        <DartActionLinks></DartActionLinks>
-    </aside>
-    <section>
-        <RouterView />
-    </section>
+    <NestedCard buttonName="Dart Tutorial">
+        <NestedCard buttonName="Basics">
+            <button @click="setTutorial('1d1', 'Dart Besic')">Dart Besic</button>
+            <button @click="setTutorial('2d1', 'Variables')">Variables</button>
+            <button>Data Types</button>
+            <button>Comments</button>
+            <button>Operators</button>
+            <button>Input</button>
+            <button>String</button>
+        </NestedCard>
+    </NestedCard>
 </template>
 
-<style>
-header {
-    grid-column: 1 / 18;
-    grid-row: 1 / 2;
-    min-height: 5rem;
-    background: var(--gradient-header);
-}
-
-aside {
-    grid-column: 1 / 4;
-    grid-row: 2 / 18;
-    border-right: 1px solid gray;
+<style scoped>
+button{
+    width: 100%;
+    height: 4rem;
+    border: 1px solid gray;
     box-sizing: border-box;
-}
-
-section {
-    /* height: calc(100vh - 5rem); */
-    max-height: calc(100vh - 5rem);
-    grid-column: 4 / 18;
-    grid-row: 2 / 18;
+    border-radius: 0.5rem;
 }
 </style>

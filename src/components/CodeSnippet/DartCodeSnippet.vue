@@ -8,8 +8,7 @@ const props = defineProps({
   codeTitle: String,
 });
 
-const code = ref('');
-
+let code = ref('');
 let codeRef = ref(null); // Define codeRef
 
 const highlightCode = () => {
@@ -22,6 +21,11 @@ onMounted(() => {
   code.value = props.code;
   highlightCode();
 });
+
+watch(props, ()=>{
+  code.value = props.code;
+  highlightCode();
+})
 </script>
 
 <template>
@@ -46,11 +50,16 @@ onMounted(() => {
   width: calc(100% - 2rem);
   padding: 0.5rem 1rem;
 }
+.SnippitTitle{
+  text-transform: capitalize;
+  font-weight: bold;
+}
 
 pre {
   overflow-x: auto; /* Enable horizontal scrolling */
   font-size: 1.2rem;
   border-radius: 1rem;
   padding: 0 2rem;
+  min-height: calc(100vh - 17rem);
 }
 </style>
