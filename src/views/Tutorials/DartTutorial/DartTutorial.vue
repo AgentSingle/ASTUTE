@@ -48,7 +48,7 @@ const setTutorialConditionsAndLoop = (tute) => {
             <button @click="setTutorialBesics('6d1')">Input</button>
             <button @click="setTutorialBesics('7d1')">String</button>
         </NestedCard>
-        <NestedCard buttonName="Dart Conditions and Loops">
+        <NestedCard buttonName="Dart Conditions and Loops" backGround="var(--gradient-one)">
             <button @click="setTutorialConditionsAndLoop('1d2')">Conditions</button>
             <button @click="setTutorialConditionsAndLoop('2d2')">Assert</button>
         </NestedCard>
