@@ -2,6 +2,7 @@
 import { ref, defineEmits } from "vue";
 let props = defineProps({
     buttonName: String,
+    backGround: String,
 })
 
 // const emit = defineEmits(["nestedCardResponse"]);
@@ -14,7 +15,7 @@ const setVisibilityStatus = () => {
 
 <template>
     <div class="NestedCardWrapper">
-        <button @click="setVisibilityStatus">
+        <button @click="setVisibilityStatus" :style="{'background': backGround}">
             {{ buttonName }}
         </button>
         <div class="NestedCardChildWrapper">
@@ -34,16 +35,17 @@ const setVisibilityStatus = () => {
 .NestedCardWrapper button {
     min-width: 100%;
     padding: 1rem;
-    border-radius: 1rem;
-    background: var(--gradient-header);
-    color: var(--light);
+    border-radius: 0.5rem;
+    /* background: var(--gradient-header); */
+    border: 1px solid gray;
+    box-sizing: border-box;
     transition: 0.5s ease-in;
     text-align: left;
 }
 
-.NestedCardWrapper button:hover {
+/* .NestedCardWrapper button:hover {
     background: var(--gradient-header-reverse);
-}
+} */
 
 .NestedCardChildWrapper {
     margin-right: 2rem;

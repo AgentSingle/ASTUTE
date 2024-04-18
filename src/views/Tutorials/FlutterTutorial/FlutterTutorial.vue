@@ -3,7 +3,7 @@ import NestedCard from '../../../components/Cards/ListCard/NestedCard.vue';
 </script>
 
 <template>
-    <NestedCard buttonName="Flutter Tutorial">
+    <NestedCard buttonName="Flutter Tutorial" backGround="var(--gradient-header)">
         not initiated yet
         <!-- <ul style="list-style-type: none;">
             <NestedCard buttonName="Besic Components">

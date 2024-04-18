@@ -1,11 +1,10 @@
 <script setup>
 import DartTutoiral from '../Tutorials/DartTutorial/DartTutorial.vue';
 import FlutterTutorial from '../Tutorials/FlutterTutorial/FlutterTutorial.vue';
-import DartCodeSnippet from "../../components/CodeSnippet/DartCodeSnippet.vue";
+import VisualizeDartCode from '../../views/Tutorials/DartTutorial/VisualizeDartCode.vue';
 
 import { useTutorialEntryPoint } from "../../stores/tutorialsEntryPointStore.js";
 const tutorialEntryPointStore = useTutorialEntryPoint();
-import { ref } from "vue";
 </script>
 
 <template>
@@ -20,17 +19,10 @@ import { ref } from "vue";
     </aside>
     <section>
       <div v-if="tutorialEntryPointStore.tutorialLanguage=='dart'">
-        <DartCodeSnippet
-        :code="tutorialEntryPointStore.tutorialCode" 
-        :codeTitle="tutorialEntryPointStore.tutorialTitle" 
-        />
+        <VisualizeDartCode></VisualizeDartCode>
       </div>
       <div v-else class="container">
         Code Snippits Are Displayed Here
-        <DartCodeSnippet
-          :code="null" 
-          :codeTitle="null" 
-          />
       </div>
     </section>
 </template>

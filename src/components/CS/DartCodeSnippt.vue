@@ -4,37 +4,30 @@ import Prism from 'prismjs';
 import 'prismjs/components/prism-dart'; // Import Dart language module
 
 const props = defineProps({
-  code: undefined,
   codeTitle: String,
 });
 
-let code = ref('');
+// let code = ref('');
 let codeRef = ref(null); // Define codeRef
 
 const highlightCode = () => {
-  setTimeout(() => {
-    Prism.highlightElement(codeRef.value);
-  }, 8);
+    setTimeout(() => {
+        Prism.highlightElement(codeRef.value);
+    }, 8);
 };
 
 onMounted(() => {
-  code.value = props.code;
-  highlightCode();
+    //   code.value = props.code;
+    highlightCode();
 });
 
-watch(props, ()=>{
-  code.value = props.code;
-  highlightCode();
-})
 </script>
 
 <template>
-  <div class="CodeWrapper">
-  <div class="SnippitTitle">{{ codeTitle }}</div>
-    <pre>
-      <code :class="`language-dart`" ref="codeRef">{{ code }}</code>
-    </pre>
-  </div>
+    <div class="CodeWrapper">
+    <div class="SnippitTitle">{{ codeTitle }}</div>
+        <pre><code :class="`language-dart`" ref="codeRef"><slot></slot></code></pre>
+    </div>
 </template>
 
 <style>
@@ -47,19 +40,21 @@ watch(props, ()=>{
 @import 'prismjs/themes/prism-tomorrow.css';
 
 .CodeWrapper {
-  width: calc(100% - 2rem);
-  padding: 0.5rem 1rem;
+    width: calc(100% - 2rem);
+    padding: 0.5rem 1rem;
 }
-.SnippitTitle{
-  text-transform: capitalize;
-  font-weight: bold;
+
+.SnippitTitle {
+    text-transform: capitalize;
+    font-weight: bold;
 }
 
 pre {
-  overflow-x: auto; /* Enable horizontal scrolling */
-  font-size: 1.2rem;
-  border-radius: 1rem;
-  padding: 0 2rem;
-  min-height: calc(100vh - 17rem);
+    overflow-x: auto;
+    /* Enable horizontal scrolling */
+    font-size: 1.2rem;
+    border-radius: 1rem;
+    padding: 0 2rem;
+    min-height: calc(80vh - 7rem);
 }
 </style>

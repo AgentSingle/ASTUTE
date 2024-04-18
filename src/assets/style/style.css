@@ -13,6 +13,8 @@
 
   --gradient-header: linear-gradient(90deg, rgba(65,209,255,1) 0%, rgba(189,52,254,1) 100%);
   --gradient-header-reverse: linear-gradient(90deg, rgba(189,52,254,1) 0%, rgba(65,209,255,1) 100%);
+  --gradient-one: rgba(65,209,255,1);
+  --gradient-two: rgba(189,52,254,1);
   --light: #ffffff;
 }
 
