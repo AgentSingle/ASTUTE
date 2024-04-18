@@ -66,7 +66,8 @@ button{
     padding: 0.5rem;
 }
 ol{
-    margin-left: 2rem;
+    list-style-type: none;
+    counter-reset: list-counter;
 }
 ol li{
     background-color: #fcebff;
@@ -75,6 +76,8 @@ ol li{
     cursor: pointer;
     font-weight: bold;
     font-size: 1.4rem;
+    counter-increment: list-counter;
+    list-style-type: none;
 }
 ol li:nth-child(even){
     background-color: #ffdddd;

@@ -48,9 +48,9 @@ const setVisibilityStatus = () => {
 } */
 
 .NestedCardChildWrapper {
-    margin-right: 2rem;
     display: grid;
     grid-template-columns: 1fr;
     grid-gap: 0.5rem;
+    background-color: #6563634d;
 }
 </style>

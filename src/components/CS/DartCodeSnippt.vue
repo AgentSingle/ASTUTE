@@ -2,22 +2,17 @@
 import { ref, onMounted, defineProps, watch } from 'vue';
 import Prism from 'prismjs';
 import 'prismjs/components/prism-dart'; // Import Dart language module
-
 const props = defineProps({
   codeTitle: String,
 });
 
-// let code = ref('');
 let codeRef = ref(null); // Define codeRef
 
 const highlightCode = () => {
-    setTimeout(() => {
-        Prism.highlightElement(codeRef.value);
-    }, 8);
+    Prism.highlightElement(codeRef.value);
 };
 
 onMounted(() => {
-    //   code.value = props.code;
     highlightCode();
 });
 
