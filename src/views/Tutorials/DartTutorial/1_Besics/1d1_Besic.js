@@ -1,28 +1,17 @@
 export const Basics_1 = `
 void main(){
-    // we can change value of a variable but can't change type of a variable
-    var name = 'Supriya Singh';
-    name = 'Agent Single';
-    // name = 10;
-    print(name.runtimeType);
-
-    // we can't change value as-well-as type of a constant
-    const daysInYear = 365;
-    // daysInYear = 250;
-    print(daysInYear.runtimeType);
-
-
-    // we can't change value as wel as type of a finalize datatype
-    final age = 25;
-    // age = 20;
-    // age = 'some name';
-    print(age.runtimeType);
-
-    // we can change value as wel as type of a dynamic datatype
-    dynamic myName = 'Agent Single';
-    myName = 10;
-    myName = false;
-    myName = 15.5;
-    print(myName);
-    print(myName.runtimeType);
+    int num1 = 10;
+    int num2 = 5;
+  
+    int sum = num1 + num2;
+    print("The sum is: $sum");
+  
+    int differance = num1 - num2;
+    print("The difference is: $differance");
+  
+    int multiply = num1 * num2;
+    print("The multiply is: $multiply");
+  
+    double division = num1 / num2;
+    print("The division: $division");
 }`;
