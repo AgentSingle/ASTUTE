@@ -5,6 +5,7 @@ import 'prismjs/components/prism-dart'; // Import Dart language module
 
 const props = defineProps({
   code: undefined,
+  codeTitle: String,
 });
 
 const code = ref('');
@@ -14,20 +15,18 @@ let codeRef = ref(null); // Define codeRef
 const highlightCode = () => {
   setTimeout(() => {
     Prism.highlightElement(codeRef.value);
-  }, 100);
+  }, 8);
 };
 
 onMounted(() => {
   code.value = props.code;
   highlightCode();
 });
-// watch(code, ()=>{
-//   highlightCode();
-// })
 </script>
 
 <template>
   <div class="CodeWrapper">
+  <div class="SnippitTitle">{{ codeTitle }}</div>
     <pre>
       <code :class="`language-dart`" ref="codeRef">{{ code }}</code>
     </pre>

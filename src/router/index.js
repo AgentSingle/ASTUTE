@@ -8,18 +8,19 @@ const routes = [
   },
   {
     path: "/Dart",
-    name: "Dart",       
-    component: () => import("../views/Tutorials/DartTutorial/DartTutorial.vue"),
-    redirect: {
-      name: 'DartTutorial',
-    },
-    children: [
-      {
-        path: "",
-        name: "DartTutorial",
-        component: () => import("../views/Tutorials/DartTutorial/dt/dartVariables.vue"),
-      }
-    ]     
+    name: "Dart",
+    component: () => import("../views/Tutorials/DartTutorial/dt/dartVariables.vue"),
+    // component: () => import("../views/Tutorials/DartTutorial/DartTutorial.vue"),
+    // redirect: {
+    //   name: 'DartTutorial',
+    // },
+    // children: [
+    //   {
+    //     path: "",
+    //     name: "DartTutorial",
+    //     component: () => import("../views/Tutorials/DartTutorial/dt/dartVariables.vue"),
+    //   }
+    // ]     
   },
   {
     path: "/Flutter",
@@ -27,7 +28,7 @@ const routes = [
     component: () => import("../views/Tutorials/FlutterTutorial/FlutterTutorial.vue"),       
   },
   {
-    path: '/:catchAll(.*)', // Fallback route to handle 404 errors
+    path: '/:pathMatch(.*)', // Fallback route to handle 404 errors
     component: () => import("../views/NotFound/NoteFound.vue"),
   }
 ]

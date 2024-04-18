@@ -6,7 +6,8 @@ import { besic } from "./1tute";
 <template>
     <div>
         <DartCodeSnippet
-        :code="besic" 
+        :code="besic.code" 
+        :codeTitle="besic.codeTitle" 
         />
     </div>
 </template>
