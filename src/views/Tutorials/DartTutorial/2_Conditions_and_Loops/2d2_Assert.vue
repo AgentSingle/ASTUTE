@@ -4,10 +4,10 @@ import DartCodeSnippt from '../../../../components/CS/DartCodeSnippt.vue';
 
 <template>
     <div class="FlxM XLT Tbold Tupper">
-        Dart Comments
+        Dart Conditions and Loops
     </div>
 
-    <DartCodeSnippt codeTitle="Comments">
+    <DartCodeSnippt codeTitle="Assert">
         <pre>
 void main(){
     var age = 25;

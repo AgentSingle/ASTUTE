@@ -26,13 +26,13 @@ const tutorialEntryPointStore = useTutorialEntryPoint();
         <Comments v-if="tutorialEntryPointStore.tutorialCode=='4d1'"></Comments>
         <Operators v-else-if="tutorialEntryPointStore.tutorialCode=='5d1'"></Operators>
         <Inputs v-else-if="tutorialEntryPointStore.tutorialCode=='6d1'"></Inputs>
-        <String v-else-if="tutorialEntryPointStore.tutorialCode=='7d1'"></String>
+        <String></String>
     </div>
 
     
     <!-- =====================[ DART CONDITIONS & LOOPS ]===================== -->
     <div>
-        <Conditions v-if="tutorialEntryPointStore.tutorialCode=='1d2'"></Conditions>
+        <Conditions></Conditions>
         <Assert v-if="tutorialEntryPointStore.tutorialCode=='2d2'"></Assert>
     </div>
 </template>

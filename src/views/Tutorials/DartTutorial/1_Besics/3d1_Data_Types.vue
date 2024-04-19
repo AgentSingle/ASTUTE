@@ -1,7 +1,6 @@
 <script setup>
 import { useTutorialEntryPoint } from "../../../../stores/tutorialsEntryPointStore.js";
 const tutorialEntryPointStore = useTutorialEntryPoint();
-import DartCodeSnippt from '../../../../components/CS/DartCodeSnippt.vue';
 
 
 import Types from "./3d1_Data_Types/3d1_0_Types.vue";
