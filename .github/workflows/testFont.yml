@@ -1,4 +1,4 @@
-name: astute Tests
+name: Tutorial Tests
 
 on:
   pull_request:
