@@ -46,10 +46,29 @@ const setTutorialConditionsAndLoop = (tute) => {
             <button @click="setTutorialBesics('4d1')">Comments</button>
             <button @click="setTutorialBesics('5d1')">Operators</button>
             <button @click="setTutorialBesics('6d1')">Input</button>
-            <button @click="setTutorialBesics('7d1')">String</button>
+            <!-- <button @click="setTutorialBesics('7d1')">String</button> -->
+
+            <NestedCard buttonName="String">
+                <ol>
+                    <li @click="setTutorialBesics('7d1')">String</li>
+                    <li @click="setTutorialBesics('7d1_1')">String Concatenation</li>
+                    <li @click="setTutorialBesics('7d1_2')">String Properties</li>
+                    <li @click="setTutorialBesics('7d1_3')">Methods Of String</li>
+                </ol>
+            </NestedCard>
         </NestedCard>
+
+        <!-- Conditions and Loops -->
         <NestedCard buttonName="Dart Conditions and Loops" backGround="var(--gradient-one)">
-            <button @click="setTutorialConditionsAndLoop('1d2')">Conditions</button>
+            <!-- <button @click="setTutorialConditionsAndLoop('1d2')">Conditions</button> -->
+            <NestedCard buttonName="Conditions">
+                <ol>
+                    <li @click="setTutorialBesics('1d2')">If Condition</li>
+                    <li @click="setTutorialBesics('1d2_1')">If-Else condition</li>
+                    <li @click="setTutorialBesics('1d2_2')">If-Else-If condition</li>
+                    <li @click="setTutorialBesics('1d2_3')">Switch-Case</li>
+                </ol>
+            </NestedCard>
             <button @click="setTutorialConditionsAndLoop('2d2')">Assert</button>
         </NestedCard>
     </NestedCard>
