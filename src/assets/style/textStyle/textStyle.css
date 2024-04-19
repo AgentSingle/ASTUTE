@@ -2,30 +2,37 @@
 .XXXLT{
     font-size: 2.5rem;
 }
+
 /* DOUBLE XL TEXT */
 .XXLT{
     font-size: 2.2rem;
 }
+
 /* EXTRA LARGE TEXT */
 .XLT{
     font-size: 2rem;
 }
+
 /* LARGE TEXT */
 .LT{
     font-size: 1.8rem;
 }
+
 /* MEDIUM TEXT */
 .MT{
     font-size: 1.4rem;
 }
+
 /* SMALL TEXT */
 .ST{
     font-size: 1.2rem;
 }
+
 /* MINI TEXT */
 .mT{
     font-size: 1rem;
 }
+
 /* NANO TEXT */
 .nT{
     font-size: 0.8rem;
