@@ -1,4 +1,5 @@
 <script setup>
+import Loader from "../../components/Loader/Base.vue";
 import DartTutoiral from '../Tutorials/DartTutorial/DartTutorial.vue';
 import FlutterTutorial from '../Tutorials/FlutterTutorial/FlutterTutorial.vue';
 import VisualizeDartCode from '../../views/Tutorials/DartTutorial/VisualizeDartCode.vue';
@@ -22,7 +23,8 @@ const tutorialEntryPointStore = useTutorialEntryPoint();
         <VisualizeDartCode></VisualizeDartCode>
       </div>
       <div v-else class="container">
-        Code Snippits Are Displayed Here
+        <!-- Code Snippits Are Come Here -->
+        <Loader></Loader>
       </div>
     </section>
 </template>
