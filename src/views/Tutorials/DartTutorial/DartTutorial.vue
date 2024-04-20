@@ -17,7 +17,7 @@ const setTutorialConditionsAndLoop = (tute) => {
 <template>
     <NestedCard buttonName="Dart Tutorial" backGround="var(--gradient-header)">
         
-        <!-- DART BASIC -->
+<!-- =========================================[ DART BASIC ]========================================= -->
         <NestedCard buttonName="Dart Basics" backGround="var(--gradient-one)">
             <button @click="setTutorialBesics('1d1')">Dart Besic</button>
 
@@ -58,7 +58,8 @@ const setTutorialConditionsAndLoop = (tute) => {
             </NestedCard>
         </NestedCard>
 
-        <!-- Conditions and Loops -->
+
+<!-- =====================================[ Conditions and Loops ]===================================== -->
         <NestedCard buttonName="Dart Conditions and Loops" backGround="var(--gradient-one)">
             <!-- <button @click="setTutorialConditionsAndLoop('1d2')">Conditions</button> -->
             <NestedCard buttonName="Conditions">
@@ -70,6 +71,20 @@ const setTutorialConditionsAndLoop = (tute) => {
                 </ol>
             </NestedCard>
             <button @click="setTutorialConditionsAndLoop('2d2')">Assert</button>
+            <button @click="setTutorialConditionsAndLoop('3d2')">Tarnery Operator</button>
+            <NestedCard buttonName="Dart Loops">
+                <ol>
+                    <li @click="setTutorialBesics('4d2')">Loops Types</li>
+                    <li @click="setTutorialBesics('4d2_1')">For Loop</li>
+                    <li @click="setTutorialBesics('4d2_2')">For Each Loop</li>
+                    <li @click="setTutorialBesics('4d2_3')">For In Loop in Dart</li>
+                    <li @click="setTutorialBesics('4d2_4')">Find Key & Value</li>
+                    <li @click="setTutorialBesics('4d2_5')">While Loop</li>
+                    <li @click="setTutorialBesics('4d2_6')">Do While Loop</li>
+                </ol>
+            </NestedCard>
+            <button @click="setTutorialConditionsAndLoop('5d2')">Break and Continue</button>
+            <button @click="setTutorialConditionsAndLoop('6d2')">Try and Catch</button>
         </NestedCard>
     </NestedCard>
 </template>
