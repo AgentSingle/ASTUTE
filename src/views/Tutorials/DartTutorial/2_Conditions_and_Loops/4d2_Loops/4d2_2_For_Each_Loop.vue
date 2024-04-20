@@ -4,7 +4,7 @@ import DartCodeSnippt from '../../../../../components/CS/DartCodeSnippt.vue';
 
 <template>
     <div class="FlxM XLT Tbold Tupper">
-        Dart Conditions and Loops
+        Dart Loops
     </div>
 
     <DartCodeSnippt codeTitle="For Each Loop">
