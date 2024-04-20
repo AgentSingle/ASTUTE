@@ -22,7 +22,7 @@ const tutorialEntryPointStore = useTutorialEntryPoint();
         <VisualizeDartCode></VisualizeDartCode>
       </div>
       <div v-else class="container">
-        Code Snippits Are Displayed Here
+        Code Snippits Are Come Here
       </div>
     </section>
 </template>
