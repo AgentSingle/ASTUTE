@@ -5,17 +5,54 @@ import Dart from './dart.vue';
 import flutter from './flutter.vue';
 
 const myArray = ref(['Explore', 'Learn', 'Apply', 'Go Forword', 'Win']);
-let mainText = ref("Explore");
+let myArrayIndex = ref(0);
+let mainText = ref('Explore');
+
+const dartArray = ref([
+    'Dart Tutorial', 'Dart Basics', 'Conditions and Loops', 'Dart Functions',
+    'Dart Collection', 'File Handling', 'OOP In Dart', 'Null Safety',
+    'Asynchronous Programming',
+]);
+let dartArrayIndex = ref(0);
+let dartText = ref('Dart Tutorial');
+
+const flutterArray = ref([
+    'Flutter Tutorial', 'StatLess/StateFul', 'Basics Widget', 'Scroll Widget',
+    'Overflow Widget', 'Reusabele Widget', 'Static Assetes', 'Local DB',
+    'Request Response', 'Asynchronous Widgets',
+]);
+let flutterArrayIndex = ref(0);
+let flutterText = ref('Flutter Tutorial');
 
 // ADJUST SIZE OF THE LOADER
 let LoaderWrapper = ref(null);
 onMounted(() => {
     setSize();
     setInterval(() => {
-        const randomIndex = Math.floor(Math.random() * myArray.value.length);
-        mainText.value = myArray.value[randomIndex];
+        // Main Text
+        if (myArrayIndex.value == myArray.value.length) {
+            myArrayIndex.value = 0;
+        }
+        myArrayIndex.value = myArrayIndex.value + 1;
+        mainText.value = myArray.value[myArrayIndex.value -1];
+
+        // Dart
+        if (dartArrayIndex.value == dartArray.value.length) {
+            dartArrayIndex.value = 0;
+        }
+        dartArrayIndex.value = dartArrayIndex.value + 1;
+        dartText.value = dartArray.value[dartArrayIndex.value -1];
+
+        // Flutter
+        if (flutterArrayIndex.value == flutterArray.value.length) {
+            flutterArrayIndex.value = 0;
+        }
+        flutterArrayIndex.value = flutterArrayIndex.value + 1;
+        flutterText.value = flutterArray.value[flutterArrayIndex.value -1];
+
     }, 2000);
 })
+
 const setSize = () => {
     let loader = LoaderWrapper.value;
     let parent = loader.parentElement.parentElement;
@@ -43,13 +80,13 @@ window.addEventListener("resize", function () {
 <template>
     <div class="LoaderWrapper" ref="LoaderWrapper">
         <div class="Loader">
-            <flutter></flutter>
+            <flutter :flutterText="flutterText"></flutter>
             <div class="LoaderInnerWrapper">
                 <div class="LoaderFirstChild">
                     <div class="maintext">{{ mainText }}</div>
                     <Author></Author>
                 </div>
-                <Dart></Dart>
+                <Dart :dartText="dartText"></Dart>
             </div>
         </div>
     </div>

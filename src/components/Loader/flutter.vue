@@ -1,10 +1,17 @@
-<script setup></script>
+<script setup>
+let props = defineProps({
+    flutterText: String,
+})
+</script>
 <template>
     <div class="FlutterTutorialDetails">
-        <div class="FlutterTutorial">
-            Flutter Tutorial
+        <div class="CircularIndicator">
             <div class="indicatorOne">
-                <div class="indicatorTwo"></div>
+                <div class="indicatorTwo">
+                    <div class="FlutterTutorial">
+                        {{ flutterText }}
+                    </div>
+                </div>
             </div>
         </div>
     </div>
@@ -13,19 +20,71 @@
 
 
 <style scoped>
-.FlutterTutorialDetails{
+.FlutterTutorialDetails {
     position: absolute;
     transform: rotateZ(0deg);
     z-index: 100;
     width: 100%;
     height: 100%;
 }
+
+.CircularIndicator {
+    position: fixed;
+    height: 2rem;
+    width: 2rem;
+    top: 20rem;
+    left: 35%;
+    content: "";
+    border-radius: 50%;
+    border: 2px solid #bcbcbcdf;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.indicatorOne {
+    position: absolute;
+    width: 3px;
+    height: 16vh;
+    transform: rotateZ(-35deg);
+}
+
+.indicatorOne::after {
+    content: '';
+    position: absolute;
+    width: 3px;
+    height: 7vh;
+    left: 0;
+    top: 0;
+    background-color: #bcbcbcdf;
+}
+
+.indicatorTwo{
+    position: absolute;
+    width: 4vw;
+    height: 3px;
+    top: 0;
+    right: -2vw;
+    transform: rotateZ(35deg);
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+}
+.indicatorTwo::after {
+    content: '';
+    position: absolute;
+    width: 2vw;
+    height: 3px;
+    top: 0;
+    background-color: #bcbcbcdf;
+}
 .FlutterTutorial{
     position: absolute;
     display: flex;
     white-space: nowrap;
-    left: 30%;
-    top: 7%;
+    top: -2rem;
+    right: 4vw;
     background-color: #303232a6;
     border: 1px solid #fff;
     padding: 1rem;
@@ -36,33 +95,5 @@
     font-weight: bold;
     text-shadow: 1px 1px #242323;
 }
-.indicatorOne{
-    position: absolute;
-    top: calc(50% - 1.5px);
-    width: 3vw;
-    right: -3vw;
-    height: 3px;
-    background-color: #ffffffc6;
-}
-.indicatorTwo{
-    position: absolute;
-    right: 0;
-    top: 0;
-    height: 5vh;
-    width: 3px;
-    background-color: #ffffffc6;
-    /* transform: rotateZ(45deg); */
-}
-.indicatorTwo::after{
-    position: absolute;
-    height: 2rem;
-    width: 2rem;
-    left: calc(-1rem + 1.5px);
-    bottom: -2rem;
-    content: "";
-    /* background-color: rgb(30, 29, 29); */
-    border-radius: 50%;
-    border: 2px solid #ffffffc6;
-    box-sizing: border-box;
-}
+
 </style>
