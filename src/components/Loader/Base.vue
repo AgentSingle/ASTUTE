@@ -7,6 +7,10 @@ import flutter from './flutter.vue';
 const myArray = ref(['Explore', 'Learn', 'Apply', 'Go Forword', 'Win']);
 let myArrayIndex = ref(0);
 let mainText = ref('Explore');
+let conicalGradientWidth = ref(0);
+let deltaOfGradient = ref(1);
+let colorA = ref('#0095ff8e');
+let colorB = ref('transparent');
 
 const dartArray = ref([
     'Dart Tutorial', 'Dart Basics', 'Conditions and Loops', 'Dart Functions',
@@ -51,6 +55,20 @@ onMounted(() => {
         flutterText.value = flutterArray.value[flutterArrayIndex.value -1];
 
     }, 2000);
+
+    setInterval(() => {
+        conicalGradientWidth.value = conicalGradientWidth.value + 1;
+        if (conicalGradientWidth.value == 1000) {
+            conicalGradientWidth.value = 0;
+            if (colorA.value != 'transparent'){
+                colorA.value = 'transparent';
+                colorB.value = '#0095ff3f';
+            }else{
+                colorA.value = '#0095ff3f';
+                colorB.value = 'transparent';
+            }
+        }
+    }, 10);
 })
 
 const setSize = () => {
@@ -81,10 +99,15 @@ window.addEventListener("resize", function () {
     <div class="LoaderWrapper" ref="LoaderWrapper">
         <div class="Loader">
             <flutter :flutterText="flutterText"></flutter>
+            <div class="LoaderAnimation" :style="{'background': `conic-gradient(${colorA} ${100 - conicalGradientWidth/10}%, 0, ${colorB} 0%)`}">
+            </div>
             <div class="LoaderInnerWrapper">
                 <div class="LoaderFirstChild">
-                    <div class="maintext">{{ mainText }}</div>
+                    <div class="maintext">{{ mainText }}
+                    </div>
                     <Author></Author>
+                    <div class="LoaderAnimationTwo" :style="{'background': `conic-gradient(#80ffd32d ${conicalGradientWidth/10}%, 0, transparent 0%)`}">
+                    </div>
                 </div>
                 <Dart :dartText="dartText"></Dart>
             </div>
@@ -109,6 +132,22 @@ window.addEventListener("resize", function () {
     border-radius: 50%;
     color: white;
     position: relative;
+}
+.LoaderAnimation{
+    position: absolute;
+    border-radius: 50%;
+    height: 100%;
+    width: 100%;
+    background-color: #80ffd32d;
+    background-color: #0095ff3f;
+    transform: rotateZ(-185deg);
+}
+.LoaderAnimationTwo{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    border-radius: 50%;
+    z-index: 1;
 }
 
 .LoaderInnerWrapper {
