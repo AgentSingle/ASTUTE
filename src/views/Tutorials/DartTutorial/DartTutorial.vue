@@ -12,6 +12,10 @@ const setTutorialConditionsAndLoop = (tute) => {
     tutorialEntryPointStore.setTutorialData('dart', tute);
 }
 
+const setTutorialFunction = (tute) => {
+    tutorialEntryPointStore.setTutorialData('dart', tute);
+}
+
 </script>
 
 <template>
@@ -86,6 +90,26 @@ const setTutorialConditionsAndLoop = (tute) => {
             <button @click="setTutorialConditionsAndLoop('5d2')">Break and Continue</button>
             <button @click="setTutorialConditionsAndLoop('6d2')">Try and Catch</button>
         </NestedCard>
+
+<!-- =====================================[ FUNCTIONS ]===================================== -->
+        <NestedCard buttonName="Dart Functions" backGround="var(--gradient-one)">
+            <button @click="setTutorialFunction('1d3')">Function Overview</button>
+            <button @click="setTutorialFunction('2d3')">Funticions Type</button>
+            
+            <NestedCard buttonName="Functions Parameter">
+                <ol>
+                    <li @click="setTutorialBesics('3d3')">Functions Parameter</li>
+                    <li @click="setTutorialBesics('3d3_1')">Positional Parameter</li>
+                    <li @click="setTutorialBesics('3d3_2')">Named Parameter</li>
+                </ol>
+            </NestedCard>
+            <button @click="setTutorialFunction('4d3')">Anonymous Function</button>
+            <button @click="setTutorialFunction('5d3')">ArrowFunction</button>
+            <button @click="setTutorialFunction('6d3')">Scope</button>
+            <button @click="setTutorialFunction('7d3')">Math</button>
+        </NestedCard>
+
+
     </NestedCard>
 </template>
 
